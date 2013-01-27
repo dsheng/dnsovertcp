@@ -38,9 +38,10 @@ class DNSHandler(DatagramProtocol):
                 
                 #import binascii
                 #print binascii.hexlify(data)
-                ips = ['.'.join(str(ord(x)) for x in s[10:]) for s in re.findall('\x00\x01\x00\x01.{5}\x04.{4}', data)]
-                if ips:
-                    return data[4:]
+                #ips = ['.'.join(str(ord(x)) for x in s[10:]) for s in re.findall('\x00\x01\x00\x01.{5}\x04.{4}', data)]
+                #print ips:
+
+                return data[4:]
 
             except (IOError,socket.error,Exception) as e:
                 pass

@@ -31,7 +31,7 @@ How to install and configuration
 
 4, How to check if dnsovertcp is working
 
-   Install dns tools(dnsutils for ubuntu,bind-tutils for centos):
+   Install dns tools(dnsutils for Ubuntu,bind-tutils for CentOS):
 
 	a, dig twitter.com @127.0.0.1
 	b, dig +tcp twitter.com @8.8.8.8

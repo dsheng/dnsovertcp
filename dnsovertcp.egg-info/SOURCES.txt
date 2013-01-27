@@ -1,9 +1,0 @@
-setup.py
-bin/dns-overtcp
-dnsovertcp.egg-info/PKG-INFO
-dnsovertcp.egg-info/SOURCES.txt
-dnsovertcp.egg-info/dependency_links.txt
-dnsovertcp.egg-info/top_level.txt
-truedns/__init__.py
-truedns/daemon.py
-truedns/dnsovertcp.py

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+python setup.py bdist_egg
+easy_install -q dist/dnsovertcp-*.egg
+/bin/cp -f bin/dns-overtcp /usr/local/bin
+chmod +x /usr/local/bin/dns-overtcp
+
+echo "dnsovertcp installed successfully"

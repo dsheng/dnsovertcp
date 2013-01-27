@@ -1,0 +1,44 @@
+#!/bin/bash
+#
+# dnsovertcp start/stop/restart any shell script
+#
+# chkconfig: 345 95 65
+# description: dnsovertcp 
+#
+
+# Name for the service, used in logging
+NAME=dnsovertcp
+
+DNSOVERTCP_COMMAND="/usr/local/bin/dns-overtcp"
+
+# Command
+start() {
+    echo -n $"Starting dnsovertcp..."
+    $DNSOVERTCP_COMMAND start
+    echo "Done"
+    exit 0
+}
+
+stop() {
+
+    echo -n $"Stopping dnsovertcp..."
+    $DNSOVERTCP_COMMAND stop
+    echo "Done"
+    exit 1
+}
+
+case "$1" in
+  start)
+      start
+    ;;
+  stop)
+      stop
+    ;;
+  restart)
+      stop
+      start
+    ;;
+  *)
+    echo $"Usage: $0 {start|stop|restart}"
+    exit 1
+esac

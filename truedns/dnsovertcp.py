@@ -25,9 +25,8 @@ class DNSHandler(DatagramProtocol):
 
     def resolv_by_tcp(self,data):
 
-        sock = socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM)        
-
         for dns_server in self.dns_servers:
+            sock = socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM)        
             try:
                 sock.settimeout(self.timeout)
                 sock.connect((dns_server,53))
@@ -44,7 +43,8 @@ class DNSHandler(DatagramProtocol):
                     return data[4:]
 
             except (IOError,socket.error,Exception) as e:
-                logging.error('DNSServer failed to resolve the domain')
+                pass
+                #logging.error('DNSServer failed to resolve the domain')
             finally:
                 if sock:
                    sock.close()        
@@ -71,6 +71,13 @@ class DNSHandler(DatagramProtocol):
             cache[domain] = rdata        
         else:
             #No result for this domain
+            list_domain = list(domain)
+            i = ord(domain[0])+1
+            while i < len(domain):
+               list_domain[i]='.'
+               i += ord(domain[i])+1
+
+            logging.error('DNSServer failed to resolve %s',''.join(list_domain[1:]))
             rdata = '\x81\x80\x00\x01\x00\x01\x00\x00\x00\x00'
             
         self.transport.write(reqid + rdata, address)   

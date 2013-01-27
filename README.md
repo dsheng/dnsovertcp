@@ -25,7 +25,7 @@ How to install and configuration
 
 3, Edit local nameserver to localhost
   
-   For linux or mac os,modify /etc/resolv.conf
+   For Linux or Mac OS,modify /etc/resolv.conf
 
 	nameserver 127.0.0.1
 

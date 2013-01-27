@@ -1,9 +1,10 @@
 DNS over TCP
-==========
+============
 
 Transform the local dns udp request to tcp request, thus avoid dns poisoning or hijacking, this converter is also similar to the dnsproxy.
 
 How to install and configuration
+--------------------------------
 
 1, Install twisted package
 
@@ -39,4 +40,6 @@ How to install and configuration
 
    The result of a and b should be same, if c is different from others, that means your upstream dns-server is poisoning.
 
-Under MIT license        
+License:
+--------
+The dnsovertcp is under MIT license 

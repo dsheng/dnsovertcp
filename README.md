@@ -13,12 +13,12 @@ How to install and configuration
 
 2, Run dnsovertcp
    
-   For linux
+   For Linux
 
 	sudo ./install
 	sudo /etc/init.d/dnsovertcp start
 
-   For mac os
+   For Mac OS
 
     sudo ./install.osx
     sudo /usr/local/bin/dns-overtcp start
